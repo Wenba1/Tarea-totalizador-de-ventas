@@ -50,8 +50,10 @@ export function MostrarDescuentos(orden){
     return 5;
   }else if(orden>=7000 && orden<10000){
     return 7;
-  }else if(orden>=10000){
+  }else if(orden>=10000 && orden<30000){
     return 10;
+  }else if(orden>=30000){
+    return 15;
   }
 }
 

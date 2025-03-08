@@ -89,7 +89,15 @@ describe("Totalizador de ventas: ", () => {
     expect(MostrarTotalPrecioYDescuento(100,120,"AL")).toEqual(11280);
   });
 
-  it("Deberia mostrar el total del descuento de 7000", () => {
+  it("Deberia mostrar el total del descuento de 10000", () => {
     expect(MostrarTotalDescuento(100,120)).toEqual(1200);
+  });
+
+  it("Deberia mostrar el precio total de descuento que corresponde a 30000", () => {
+    expect(MostrarTotalPrecioYDescuento(150,210,"NV")).toEqual(29295);
+  });
+
+  it("Deberia mostrar el total del descuento de 30000", () => {
+    expect(MostrarTotalDescuento(150,210)).toEqual(4725);
   });
 });
