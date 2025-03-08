@@ -21,11 +21,20 @@ describe("Totalizador de ventas: ", () => {
     expect(MostrarPocentajeDelEstado("CA")).toEqual(8.25);
   });
 
-  it("Deberia mostrar el precio total con el impuesto de california", () => {
+  it("Deberia mostrar el precio total con el impuesto de california CA", () => {
     expect(MostrarPrecioTotal(20,3,"CA")).toEqual(64.95);
   });
 
-  it("Deberia mostrar el total del porcentaje del estado", () => {
+  it("Deberia mostrar el total del porcentaje del estado CA", () => {
     expect(MostrarTotalporcentaje(20,3,"CA")).toEqual(4.95);
   });
+
+  it("Deberia mostrar el precio total con el impuesto del estado AL", () => {
+    expect(MostrarPrecioTotal(20,3,"AL")).toEqual(62.4);
+  });
+
+  it("Deberia mostrar el total del porcentaje del estado AL", () => {
+    expect(MostrarTotalporcentaje(20,3,"AL")).toEqual(2.4);
+  });
 });
+//FUNEN A LOS HOMBRES
