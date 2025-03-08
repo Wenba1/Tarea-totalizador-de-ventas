@@ -23,6 +23,8 @@ export function MostrarPocentajeDelEstado(estado){
     return 8.00;
   }else if(estado==="UT"){
     return 6.65;
+  }else if(estado==="TX"){
+    return 6.25;
   }
 }
 

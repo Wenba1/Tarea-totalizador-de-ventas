@@ -52,4 +52,12 @@ describe("Totalizador de ventas: ", () => {
   it("Deberia mostrar el total del porcentaje del estado UT", () => {
     expect(MostrarTotalporcentaje(20,3,"UT")).toEqual(3.99);
   });
+
+  it("Deberia mostrar el precio total con el impuesto del estado TX", () => {
+    expect(MostrarPrecioTotal(20,3,"TX")).toEqual(63.75);
+  });
+
+  it("Deberia mostrar el total del porcentaje del estado TX", () => {
+    expect(MostrarTotalporcentaje(20,3,"TX")).toEqual(3.75);
+  });
 });
