@@ -44,12 +44,14 @@ export function MostrarPrecioTotal(Item,precio_Item,estado){
 }
 
 export function MostrarDescuentos(orden){
-  if(orden>1000 && orden<3000){
+  if(orden>=1000 && orden<3000){
     return 3;
-  }else if(orden>3000 && orden<7000){
+  }else if(orden>=3000 && orden<7000){
     return 5;
-  }else if(orden>7000){
+  }else if(orden>=7000 && orden<10000){
     return 7;
+  }else if(orden>=10000){
+    return 10;
   }
 }
 
