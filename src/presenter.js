@@ -5,7 +5,7 @@ const precio_item=document.querySelector("#Precio_item");
 const Item_precioNeto=document.querySelector("#precioNeto_item");
 const form= document.querySelector("#totalizador-form");
 const div= document.querySelector("#resultado-div");
-
+const estado = document.querySelector("#estado_selec");
 
 form.addEventListener("submit", (event) => {
   event.preventDefault();

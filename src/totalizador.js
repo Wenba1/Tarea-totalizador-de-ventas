@@ -10,4 +10,6 @@ export function MostrarPrecioNeto(item, precio_item){
   return item*precio_item;
 }
 
-  
+export function MostrarEstado(estado){
+  return estado;
+}

@@ -1,4 +1,4 @@
-import {Ingreso,Ingreso_precio, MostrarPrecioNeto} from "./totalizador.js";
+import {Ingreso,Ingreso_precio, MostrarPrecioNeto, MostrarEstado} from "./totalizador.js";
 
 describe("Totalizador de ventas: ", () => {
   it("Deberia Ingresar la cantidad de items", () => {
@@ -9,5 +9,8 @@ describe("Totalizador de ventas: ", () => {
   });
   it("Deberia Mostrar el precio neto", () => {
     expect(MostrarPrecioNeto(20,3)).toEqual(60);
+  });
+  it("Deberia mostrar el estado", () => {
+    expect(MostrarEstado("CA")).toEqual("CA");
   });
 });
