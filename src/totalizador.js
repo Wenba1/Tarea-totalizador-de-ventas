@@ -13,3 +13,9 @@ export function MostrarPrecioNeto(item, precio_item){
 export function MostrarEstado(estado){
   return estado;
 }
+
+export function MostrarPocentajeDelEstado(estado){
+  if(estado==="CA"){
+    return "8.25%";
+  }
+}
