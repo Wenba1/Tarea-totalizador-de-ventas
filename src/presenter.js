@@ -1,4 +1,4 @@
-import {Ingreso,Ingreso_precio,MostrarPrecioNeto,MostrarPocentajeDelEstado, MostrarEstado, MostrarPrecioTotal} from "./totalizador";
+import {Ingreso,Ingreso_precio,MostrarPrecioNeto,MostrarPocentajeDelEstado, MostrarEstado, MostrarTotalporcentaje, MostrarPrecioTotal} from "./totalizador";
 
 const cantidad_item=document.querySelector("#Cantidad_item");
 const precio_item=document.querySelector("#Precio_item");
@@ -19,7 +19,7 @@ form.addEventListener("submit", (event) => {
  
   div.innerHTML = "<p>Precio Neto: " + MostrarPrecioNeto(precio_Item,cantidaditem) + "</p>";
   div_estado.innerHTML="<p> Estado: " + MostrarEstado(estadoSeleccionado) + "</p>";
-  div_impuesto.innerHTML="<p> Impuesto para "+ MostrarEstado(estadoSeleccionado) +" ("+ MostrarPocentajeDelEstado(estadoSeleccionado) + "%): </p>";
+  div_impuesto.innerHTML="<p> Impuesto para "+ MostrarEstado(estadoSeleccionado) +" ("+ MostrarPocentajeDelEstado(estadoSeleccionado) + "%):"+ MostrarTotalporcentaje(precio_Item,cantidaditem,estadoSeleccionado) +" </p>";
   div_precio_total.innerHTML="<p> Precio total: " + MostrarPrecioTotal(precio_Item,cantidaditem,estadoSeleccionado) + "</p>";
 });
 

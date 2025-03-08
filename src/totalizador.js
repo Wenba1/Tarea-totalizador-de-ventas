@@ -20,6 +20,13 @@ export function MostrarPocentajeDelEstado(estado){
   }
 }
 
+export function MostrarTotalporcentaje(Item,precio_Item,estado){
+  var Precio = MostrarPrecioNeto(Item,precio_Item);
+  var porcentaje = MostrarPocentajeDelEstado(estado);
+  var sumaporcentaje= (Precio *porcentaje)/100;
+  return sumaporcentaje;
+}
+
 export function MostrarPrecioTotal(Item,precio_Item,estado){
   var Precio = MostrarPrecioNeto(Item,precio_Item);
   var porcentaje = MostrarPocentajeDelEstado(estado);

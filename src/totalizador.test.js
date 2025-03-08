@@ -1,4 +1,4 @@
-import {Ingreso,Ingreso_precio, MostrarPrecioNeto, MostrarEstado, MostrarPocentajeDelEstado,MostrarPrecioTotal} from "./totalizador.js";
+import {Ingreso,Ingreso_precio, MostrarPrecioNeto, MostrarEstado, MostrarPocentajeDelEstado,MostrarPrecioTotal,MostrarTotalporcentaje} from "./totalizador.js";
 
 describe("Totalizador de ventas: ", () => {
   it("Deberia Ingresar la cantidad de items", () => {
@@ -23,5 +23,9 @@ describe("Totalizador de ventas: ", () => {
 
   it("Deberia mostrar el precio total con el impuesto de california", () => {
     expect(MostrarPrecioTotal(20,3,"CA")).toEqual(64.95);
+  });
+
+  it("Deberia mostrar el total del porcentaje del estado", () => {
+    expect(MostrarTotalporcentaje(20,3,"CA")).toEqual(4.95);
   });
 });
