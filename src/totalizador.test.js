@@ -36,5 +36,12 @@ describe("Totalizador de ventas: ", () => {
   it("Deberia mostrar el total del porcentaje del estado AL", () => {
     expect(MostrarTotalporcentaje(20,3,"AL")).toEqual(2.4);
   });
+
+  it("Deberia mostrar el precio total con el impuesto del estado NV", () => {
+    expect(MostrarPrecioTotal(20,3,"NV")).toEqual(64.8);
+  });
+
+  it("Deberia mostrar el total del porcentaje del estado NV", () => {
+    expect(MostrarTotalporcentaje(20,3,"NV")).toEqual(4.8);
+  });
 });
-//FUNEN A LOS HOMBRES

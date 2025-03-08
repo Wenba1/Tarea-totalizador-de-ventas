@@ -19,6 +19,8 @@ export function MostrarPocentajeDelEstado(estado){
     return 8.25;
   }else if(estado==="AL"){
     return 4.00;
+  }else if(estado=="NV"){
+    return 8.00;
   }
 }
 
