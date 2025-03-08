@@ -42,3 +42,28 @@ export function MostrarPrecioTotal(Item,precio_Item,estado){
   var total = Precio+sumaporcentaje;
   return total;
 }
+
+export function MostrarDescuentos(orden){
+  if(orden>1000){
+    return 3;
+  }
+}
+
+export function MostrarTotalPrecioYDescuento(Item,precio_Item,estado){
+  var precio= MostrarPrecioNeto(Item,precio_Item);
+  var porcentaje=MostrarPocentajeDelEstado(estado);
+  var descuento=MostrarDescuentos(precio);
+  var sumaPorcentaje=(porcentaje*precio)/100;
+  var restarDescuento=(descuento*precio)/100;
+  var sumaTotal=(precio+sumaPorcentaje-restarDescuento);
+  return sumaTotal;
+}
+
+export function MostrarTotalDescuento(Item,precio_Item){
+  var precio= MostrarPrecioNeto(Item,precio_Item);
+  var descuento=MostrarDescuentos(precio);
+  var restarDescuento=(descuento*precio)/100;
+  return restarDescuento;
+}
+
+

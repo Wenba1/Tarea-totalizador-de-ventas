@@ -1,4 +1,4 @@
-import {Ingreso,Ingreso_precio, MostrarPrecioNeto, MostrarEstado, MostrarPocentajeDelEstado,MostrarPrecioTotal,MostrarTotalporcentaje} from "./totalizador.js";
+import {Ingreso,Ingreso_precio, MostrarPrecioNeto, MostrarEstado, MostrarPocentajeDelEstado,MostrarPrecioTotal,MostrarTotalporcentaje,MostrarTotalDescuento, MostrarTotalPrecioYDescuento, MostrarDescuentos} from "./totalizador.js";
 
 describe("Totalizador de ventas: ", () => {
   it("Deberia Ingresar la cantidad de items", () => {
@@ -59,5 +59,13 @@ describe("Totalizador de ventas: ", () => {
 
   it("Deberia mostrar el total del porcentaje del estado TX", () => {
     expect(MostrarTotalporcentaje(20,3,"TX")).toEqual(3.75);
+  });
+
+  it("Deberia mostrar el precio total de descuento que corresponde a 1000", () => {
+    expect(MostrarTotalPrecioYDescuento(20,60,"TX")).toEqual(1239);
+  });
+
+  it("Deberia mostrar el total del descuento de 1000", () => {
+    expect(MostrarTotalDescuento(20,60)).toEqual(36);
   });
 });
