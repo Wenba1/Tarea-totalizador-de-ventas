@@ -16,6 +16,14 @@ export function MostrarEstado(estado){
 
 export function MostrarPocentajeDelEstado(estado){
   if(estado==="CA"){
-    return "8.25%";
+    return 8.25;
   }
+}
+
+export function MostrarPrecioTotal(Item,precio_Item,estado){
+  var Precio = MostrarPrecioNeto(Item,precio_Item);
+  var porcentaje = MostrarPocentajeDelEstado(estado);
+  var sumaporcentaje= (Precio *porcentaje)/100;
+  var total = Precio+sumaporcentaje;
+  return total;
 }
