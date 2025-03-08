@@ -44,4 +44,12 @@ describe("Totalizador de ventas: ", () => {
   it("Deberia mostrar el total del porcentaje del estado NV", () => {
     expect(MostrarTotalporcentaje(20,3,"NV")).toEqual(4.8);
   });
+
+  it("Deberia mostrar el precio total con el impuesto del estado UT", () => {
+    expect(MostrarPrecioTotal(20,3,"UT")).toEqual(63.99);
+  });
+
+  it("Deberia mostrar el total del porcentaje del estado UT", () => {
+    expect(MostrarTotalporcentaje(20,3,"UT")).toEqual(3.99);
+  });
 });
