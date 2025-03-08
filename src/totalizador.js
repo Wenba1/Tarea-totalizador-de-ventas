@@ -1,6 +1,9 @@
-function totalizador(cant_item) {
-    return cant_item;
-  }
-  
-  export default totalizador;
+export function Ingreso(item){
+  return item;
+}
+
+export function Ingreso_precio(precio_item){
+  return precio_item;
+}
+
   
