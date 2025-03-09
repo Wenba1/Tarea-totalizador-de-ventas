@@ -163,4 +163,16 @@ describe("Totalizador de ventas: ", () => {
   it("Deberia mostrar el descuento con la categoria de productos Electronicos", () => {
     expect(MostrarTotalDescuentoConCategoria(1,60)).toEqual(0.6);
   });
+
+  it("Deberia mostrar el precio total con la categoria de productos Vestimenta", () => {
+    expect(MostrarTotalprecioCategoria(20,3,"AL","Vestimenta")).toEqual(64.8);
+  });
+
+  it("Deberia mostrar el impuesto con la categoria de productos Vestimenta", () => {
+    expect(MostrarTotalImpuestoConCategoria(8,60)).toEqual(4.8);
+  });
+
+  it("Deberia mostrar el descuento con la categoria de productos Vestimenta", () => {
+    expect(MostrarTotalDescuentoConCategoria(0,60)).toEqual(0);
+  });
 });
