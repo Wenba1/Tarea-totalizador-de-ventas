@@ -115,4 +115,16 @@ describe("Totalizador de ventas: ", () => {
   it("Deberia mostrar el descuento con la categoria de productos Alimentos", () => {
     expect(MostrarTotalDescuentoConCategoria(2,60)).toEqual(1.2);
   });
+
+  it("Deberia mostrar el precio total con la categoria de productos Bebidas alcoholicas", () => {
+    expect(MostrarTotalprecioCategoria(20,3,"AL","Bebidas alcoholicas")).toEqual(66.6);
+  });
+
+  it("Deberia mostrar el impuesto con la categoria de productos Alimentos", () => {
+    expect(MostrarTotalImpuestoConCategoria(11,60)).toEqual(6.6);
+  });
+
+  it("Deberia mostrar el descuento con la categoria de productos Alimentos", () => {
+    expect(MostrarTotalDescuentoConCategoria(0,60)).toEqual(0);
+  });
 });

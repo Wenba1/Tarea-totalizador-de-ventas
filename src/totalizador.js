@@ -80,10 +80,12 @@ export function MostrarCategoriaImpuesto(categoria,estado){
   var NuevoImpuesto=0;
   if(categoria==="Alimentos"){
     NuevoImpuesto = 0;
+  }else if(categoria==="Bebidas alcoholicas"){
+    NuevoImpuesto=7;
   }
-  else{
+  /*else{
     NuevoImpuesto = 0;
-  }
+  }*/
   return MostrarPocentajeDelEstado(estado)+NuevoImpuesto;
 }
 
@@ -91,10 +93,12 @@ export function MostrarCategoriaDescuento(categoria,precio){
   var NuevoDescuento=0;
   if(categoria==="Alimentos"){
     NuevoDescuento = 2;
+  }else if(categoria==="Bebidas alcoholicas"){
+    NuevoDescuento=0;
   }
-  else{
+  /*else{
     NuevoDescuento = 0;
-  }
+  }*/
   return MostrarDescuentos(precio)+NuevoDescuento;
 }
 
