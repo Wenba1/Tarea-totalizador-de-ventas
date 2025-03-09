@@ -44,7 +44,9 @@ export function MostrarPrecioTotal(Item,precio_Item,estado){
 }
 
 export function MostrarDescuentos(orden){
-  if(orden>=1000 && orden<3000){
+  if(orden<100){
+    return 0;
+  }else if(orden>=1000 && orden<3000){
     return 3;
   }else if(orden>=3000 && orden<7000){
     return 5;
@@ -72,6 +74,49 @@ export function MostrarTotalDescuento(Item,precio_Item){
   var descuento=MostrarDescuentos(precio);
   var restarDescuento=(descuento*precio)/100;
   return restarDescuento;
+}
+
+export function MostrarCategoriaImpuesto(categoria,estado){
+  var NuevoImpuesto=0;
+  if(categoria==="Alimentos"){
+    NuevoImpuesto = 0;
+  }
+  else{
+    NuevoImpuesto = 0;
+  }
+  return MostrarPocentajeDelEstado(estado)+NuevoImpuesto;
+}
+
+export function MostrarCategoriaDescuento(categoria,precio){
+  var NuevoDescuento=0;
+  if(categoria==="Alimentos"){
+    NuevoDescuento = 2;
+  }
+  else{
+    NuevoDescuento = 0;
+  }
+  return MostrarDescuentos(precio)+NuevoDescuento;
+}
+
+export function MostrarTotalDescuentoConCategoria(catDescuento,precio){
+  var restarDescuento=(catDescuento*precio)/100;
+  return restarDescuento;
+}
+
+export function MostrarTotalImpuestoConCategoria(catImpuesto,precio){
+  var sumImpuesto=(catImpuesto*precio)/100;
+  return sumImpuesto;
+}
+
+export function MostrarTotalprecioCategoria(Item,precio_Item,estado,categoria){
+  var precio= MostrarPrecioNeto(Item,precio_Item);
+  var catImpuesto=MostrarCategoriaImpuesto(categoria,estado);
+  var catDescuento=MostrarCategoriaDescuento(categoria,precio);
+  var sumaPorcentaje=MostrarTotalImpuestoConCategoria(catImpuesto,precio);
+  var restarDescuento=MostrarTotalDescuentoConCategoria(catDescuento,precio);
+  var sumaTotal=(precio+sumaPorcentaje-restarDescuento);
+  var redondeado=Math.round(sumaTotal * 10) / 10;
+  return redondeado;
 }
 
 

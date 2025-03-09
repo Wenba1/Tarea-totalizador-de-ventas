@@ -21,12 +21,20 @@
         <option value="UT">UT</option>
         <option value="TX">TX</option>
       </select>
+      <br><br/>
+      <label for="Estado-select">Categorias:</label>
+      <select id="categoria-select">
+        <option value="Alimentos">Alimentos</option>
+      </select>
       <input type="submit"value="Totalizador" id="totalizador-button">
     </form>
     <div id="resultado-div"></div>
     <div id="resultado-descuento"></div>
     <div id="resultado-impuesto-div"></div>
     <div id="resultado-precio-total"></div>
+
+    <div id="resultado-descuento-categoria"></div>
+    <div id="resultado-impuesto-categoria"></div>
 
     <script type="module" src="./src/presenter.js"></script>
   </body>
