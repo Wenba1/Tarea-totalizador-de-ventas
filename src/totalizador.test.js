@@ -175,4 +175,16 @@ describe("Totalizador de ventas: ", () => {
   it("Deberia mostrar el descuento con la categoria de productos Vestimenta", () => {
     expect(MostrarTotalDescuentoConCategoria(0,60)).toEqual(0);
   });
+
+  it("Deberia mostrar el precio total con la categoria de productos Varios", () => {
+    expect(MostrarTotalprecioCategoria(20,3,"AL","Varios")).toEqual(62.4);
+  });
+
+  it("Deberia mostrar el impuesto con la categoria de productos Varios", () => {
+    expect(MostrarTotalImpuestoConCategoria(4,60)).toEqual(2.4);
+  });
+
+  it("Deberia mostrar el descuento con la categoria de productos Varios", () => {
+    expect(MostrarTotalDescuentoConCategoria(0,60)).toEqual(0);
+  });
 });

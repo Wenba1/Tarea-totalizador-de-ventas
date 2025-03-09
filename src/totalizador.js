@@ -90,6 +90,8 @@ export function MostrarCategoriaImpuesto(categoria,estado){
     NuevoImpuesto= 4 ;
   }else if(categoria==="Vestimenta"){
     NuevoImpuesto= 4 ;
+  }else if(categoria==="Varios"){
+    NuevoImpuesto= 0 ;
   } 
   /*else{
     NuevoImpuesto = 0;
@@ -110,6 +112,8 @@ export function MostrarCategoriaDescuento(categoria,precio){
   }else if(categoria==="Electronicos"){
     NuevoDescuento= 1 ;
   }else if(categoria==="Vestimenta"){
+    NuevoDescuento= 0 ;
+  }else if(categoria==="Varios"){
     NuevoDescuento= 0 ;
   } 
   /*else{
