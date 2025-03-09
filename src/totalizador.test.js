@@ -120,11 +120,23 @@ describe("Totalizador de ventas: ", () => {
     expect(MostrarTotalprecioCategoria(20,3,"AL","Bebidas alcoholicas")).toEqual(66.6);
   });
 
-  it("Deberia mostrar el impuesto con la categoria de productos Alimentos", () => {
+  it("Deberia mostrar el impuesto con la categoria de productos Bebidas alcoholicas", () => {
     expect(MostrarTotalImpuestoConCategoria(11,60)).toEqual(6.6);
   });
 
-  it("Deberia mostrar el descuento con la categoria de productos Alimentos", () => {
+  it("Deberia mostrar el descuento con la categoria de productos Bebidas alcoholicas", () => {
     expect(MostrarTotalDescuentoConCategoria(0,60)).toEqual(0);
+  });
+
+  it("Deberia mostrar el precio total con la categoria de productos Material de escritorio", () => {
+    expect(MostrarTotalprecioCategoria(20,3,"AL","Material de escritorio")).toEqual(61.5);
+  });
+
+  it("Deberia mostrar el impuesto con la categoria de productos Material de escritorio", () => {
+    expect(MostrarTotalImpuestoConCategoria(4,60)).toEqual(2.4);
+  });
+
+  it("Deberia mostrar el descuento con la categoria de productos Material de escritorio", () => {
+    expect(MostrarTotalDescuentoConCategoria(3.5,60)).toEqual(2.1);
   });
 });

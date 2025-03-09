@@ -82,6 +82,8 @@ export function MostrarCategoriaImpuesto(categoria,estado){
     NuevoImpuesto = 0;
   }else if(categoria==="Bebidas alcoholicas"){
     NuevoImpuesto=7;
+  }else if(categoria==="Material de escritorio"){
+    NuevoImpuesto=0;
   }
   /*else{
     NuevoImpuesto = 0;
@@ -95,6 +97,8 @@ export function MostrarCategoriaDescuento(categoria,precio){
     NuevoDescuento = 2;
   }else if(categoria==="Bebidas alcoholicas"){
     NuevoDescuento=0;
+  }else if(categoria==="Material de escritorio"){
+    NuevoDescuento=1.5;
   }
   /*else{
     NuevoDescuento = 0;
