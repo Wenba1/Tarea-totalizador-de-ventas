@@ -152,4 +152,15 @@ describe("Totalizador de ventas: ", () => {
     expect(MostrarTotalDescuentoConCategoria(0,60)).toEqual(0);
   });
   
+  it("Deberia mostrar el precio total con la categoria de productos Electronicos", () => {
+    expect(MostrarTotalprecioCategoria(20,3,"AL","Electronicos")).toEqual(64.2);
+  });
+
+  it("Deberia mostrar el impuesto con la categoria de productos Electronicos", () => {
+    expect(MostrarTotalImpuestoConCategoria(8,60)).toEqual(4.8);
+  });
+
+  it("Deberia mostrar el descuento con la categoria de productos Electronicos", () => {
+    expect(MostrarTotalDescuentoConCategoria(1,60)).toEqual(0.6);
+  });
 });

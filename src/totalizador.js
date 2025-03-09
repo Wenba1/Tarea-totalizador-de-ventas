@@ -86,6 +86,8 @@ export function MostrarCategoriaImpuesto(categoria,estado){
     NuevoImpuesto=0;
   }else if(categoria==="Muebles"){
     NuevoImpuesto=3;
+  }else if(categoria==="Electronicos"){
+    NuevoImpuesto= 4 ;
   }
   /*else{
     NuevoImpuesto = 0;
@@ -103,6 +105,8 @@ export function MostrarCategoriaDescuento(categoria,precio){
     NuevoDescuento=1.5;
   }else if(categoria==="Muebles"){
     NuevoDescuento=0;
+  }else if(categoria==="Electronicos"){
+    NuevoDescuento= 1 ;
   }
   /*else{
     NuevoDescuento = 0;
