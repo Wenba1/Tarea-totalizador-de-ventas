@@ -1,5 +1,7 @@
 import {Ingreso,Ingreso_precio, MostrarPrecioNeto, MostrarEstado, MostrarPocentajeDelEstado,MostrarPrecioTotal,MostrarTotalporcentaje,MostrarTotalDescuento,
-   MostrarTotalPrecioYDescuento, MostrarDescuentos,MostrarTotalprecioCategoria,MostrarCategoriaDescuento,MostrarCategoriaImpuesto} from "./totalizador.js";
+   MostrarTotalPrecioYDescuento, MostrarDescuentos,MostrarTotalprecioCategoria,MostrarCategoriaDescuento,MostrarCategoriaImpuesto,
+   MostrarTotalImpuestoConCategoria,
+   MostrarTotalDescuentoConCategoria} from "./totalizador.js";
 
 describe("Totalizador de ventas: ", () => {
   it("Deberia Ingresar la cantidad de items", () => {
@@ -104,5 +106,13 @@ describe("Totalizador de ventas: ", () => {
 
   it("Deberia mostrar el precio total con la categoria de productos Alimentos", () => {
     expect(MostrarTotalprecioCategoria(20,3,"AL","Alimentos")).toEqual(61.2);
+  });
+
+  it("Deberia mostrar el impuesto con la categoria de productos Alimentos", () => {
+    expect(MostrarTotalImpuestoConCategoria(4,60)).toEqual(2.4);
+  });
+
+  it("Deberia mostrar el descuento con la categoria de productos Alimentos", () => {
+    expect(MostrarTotalDescuentoConCategoria(2,60)).toEqual(1.2);
   });
 });
