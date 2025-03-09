@@ -84,6 +84,8 @@ export function MostrarCategoriaImpuesto(categoria,estado){
     NuevoImpuesto=7;
   }else if(categoria==="Material de escritorio"){
     NuevoImpuesto=0;
+  }else if(categoria==="Muebles"){
+    NuevoImpuesto=3;
   }
   /*else{
     NuevoImpuesto = 0;
@@ -99,6 +101,8 @@ export function MostrarCategoriaDescuento(categoria,precio){
     NuevoDescuento=0;
   }else if(categoria==="Material de escritorio"){
     NuevoDescuento=1.5;
+  }else if(categoria==="Muebles"){
+    NuevoDescuento=0;
   }
   /*else{
     NuevoDescuento = 0;

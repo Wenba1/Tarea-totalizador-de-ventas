@@ -139,4 +139,17 @@ describe("Totalizador de ventas: ", () => {
   it("Deberia mostrar el descuento con la categoria de productos Material de escritorio", () => {
     expect(MostrarTotalDescuentoConCategoria(3.5,60)).toEqual(2.1);
   });
+
+  it("Deberia mostrar el precio total con la categoria de productos Muebles", () => {
+    expect(MostrarTotalprecioCategoria(20,3,"AL","Muebles")).toEqual(64.2);
+  });
+
+  it("Deberia mostrar el impuesto con la categoria de productos Muebles", () => {
+    expect(MostrarTotalImpuestoConCategoria(7,60)).toEqual(4.2);
+  });
+
+  it("Deberia mostrar el descuento con la categoria de productos Muebles", () => {
+    expect(MostrarTotalDescuentoConCategoria(0,60)).toEqual(0);
+  });
+  
 });
