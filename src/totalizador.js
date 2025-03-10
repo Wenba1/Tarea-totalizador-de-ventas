@@ -143,4 +143,10 @@ export function MostrarTotalprecioCategoria(Item,precio_Item,estado,categoria){
   return redondeado;
 }
 
+export function MostrarPesoVolumetrico(peso_volumetrico){
+  if(peso_volumetrico>=0 && peso_volumetrico<10){
+    return peso_volumetrico;
+  }
+}
+
 
