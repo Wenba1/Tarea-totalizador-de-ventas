@@ -183,3 +183,7 @@ export function MostrarTotalPesoVolumetrico(Item,precio_Item,estado,categoria,pe
   return redondeado;
 }
 
+export function MostrarTipoCliente(Tipocliente){
+  return Tipocliente;
+}
+

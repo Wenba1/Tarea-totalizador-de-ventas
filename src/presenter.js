@@ -2,7 +2,7 @@ import {Ingreso,Ingreso_precio,MostrarPrecioNeto,MostrarPocentajeDelEstado, Most
    MostrarTotalporcentaje, MostrarPrecioTotal,MostrarTotalDescuento, MostrarTotalPrecioYDescuento,
    MostrarDescuentos,MostrarTotalDescuento,MostrarTotalprecioCategoria,MostrarCategoriaDescuento,
    MostrarCategoriaImpuesto,MostrarTotalDescuentoConCategoria,MostrarTotalImpuestoConCategoria, 
-   MostrarPesoVolumetrico,MostrarCostoEnvio, CalcularCostoEnvio, MostrarTotalPesoVolumetrico} from "./totalizador";
+   MostrarPesoVolumetrico,MostrarCostoEnvio, CalcularCostoEnvio, MostrarTotalPesoVolumetrico, MostrarTipoCliente} from "./totalizador";
 
 const cantidad_item=document.querySelector("#Cantidad_item");
 const precio_item=document.querySelector("#Precio_item");
@@ -17,7 +17,7 @@ const div_descuento=document.querySelector("#resultado-descuento");
 const categoria = document.querySelector("#categoria-select");
 const pesovolumetrico=document.querySelector("#Peso-volumetrico");
 const costoEnvio=document.querySelector("#Costo-Envio");
-
+const TipoCliente = document.querySelector("#Tipocliente-select");
 const div_descuento_categoria=document.querySelector("#resultado-descuento-categoria");
 const div_impuesto_categoria=document.querySelector("#resultado-impuesto-categoria");
 
