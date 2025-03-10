@@ -44,7 +44,7 @@ export function MostrarPrecioTotal(Item,precio_Item,estado){
 }
 
 export function MostrarDescuentos(orden){
-  if(orden<100){
+  if(orden<1000){
     return 0;
   }else if(orden>=1000 && orden<3000){
     return 3;
@@ -115,10 +115,7 @@ export function MostrarCategoriaDescuento(categoria,precio){
     NuevoDescuento= 0 ;
   }else if(categoria==="Varios"){
     NuevoDescuento= 0 ;
-  } 
-  /*else{
-    NuevoDescuento = 0;
-  }*/
+  }
   return MostrarDescuentos(precio)+NuevoDescuento;
 }
 
@@ -144,9 +141,14 @@ export function MostrarTotalprecioCategoria(Item,precio_Item,estado,categoria){
 }
 
 export function MostrarCostoEnvio(peso_volumetrico){
-  if(peso_volumetrico>=0 && peso_volumetrico<10){
-    return 0;
+  var CostoNuevo = 0;
+  if (peso_volumetrico >= 0 && peso_volumetrico < 10) {
+    CostoNuevo = 0;
+  } else if (peso_volumetrico >= 10 && peso_volumetrico < 20) {
+    CostoNuevo = 3.5;
   }
+
+  return CostoNuevo;
 }
 
 export function CalcularCostoEnvio(peso_volumetrico,cantidad){
@@ -154,8 +156,7 @@ export function CalcularCostoEnvio(peso_volumetrico,cantidad){
   if(costo===0){
     return cantidad;
   }
-  else
-  {
+  else{
     return cantidad*costo;
   }
 }

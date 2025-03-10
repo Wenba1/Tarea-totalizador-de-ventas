@@ -189,8 +189,11 @@ describe("Totalizador de ventas: ", () => {
     expect(MostrarTotalDescuentoConCategoria(0,60)).toEqual(0);
   });
 
-  it("Deberia mostrar el peso volumetrico:", () => {
+  it("Deberia mostrar el peso Total con el precio volumetrico de 1-10:", () => {
     expect(MostrarTotalPesoVolumetrico(20,3,"AL","Varios",3)).toEqual(62.4);
   });
-  //MostrarCostoEnvio, MostrarTotalPesoVolumetrico, CalcularCostoEnvio
+
+  it("Deberia mostrar el peso Total con el precio volumetrico de 11-20", () => {
+    expect(MostrarTotalPesoVolumetrico(20,3,"AL","Varios",12)).toEqual(218.4);
+  });
 });
