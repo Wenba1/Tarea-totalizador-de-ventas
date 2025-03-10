@@ -236,4 +236,8 @@ describe("Totalizador de ventas: ", () => {
   it("Deberia mostrar el peso Total con el precio volumetrico arriba de 200 con descuento cliente Antiguo Recurrente", () => {
     expect(MostrarTotalPesoVolumetricoDescuento(20,3,"AL","Varios",10,"Antiguo Recurrente")).toEqual(61.8);
   })
+
+  it("Deberia mostrar el peso Total con el precio volumetrico arriba de 200 con descuento cliente Especial", () => {
+    expect(MostrarTotalPesoVolumetricoDescuento(20,3,"AL","Varios",100,"Especial")).toEqual(399.5);
+  })
 });

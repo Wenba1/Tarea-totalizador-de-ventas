@@ -195,6 +195,8 @@ export function MostrarDescuentoTipoCliente(Tipocliente){
     return 0.5;
   }else if(Tipocliente==="Antiguo Recurrente"){
     return 1;
+  }else if(Tipocliente==="Especial"){
+    return 1.5
   }
 }
 
