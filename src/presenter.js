@@ -2,7 +2,7 @@ import {Ingreso,Ingreso_precio,MostrarPrecioNeto,MostrarPocentajeDelEstado, Most
    MostrarTotalporcentaje, MostrarPrecioTotal,MostrarTotalDescuento, MostrarTotalPrecioYDescuento,
    MostrarDescuentos,MostrarTotalDescuento,MostrarTotalprecioCategoria,MostrarCategoriaDescuento,
    MostrarCategoriaImpuesto,MostrarTotalDescuentoConCategoria,MostrarTotalImpuestoConCategoria, 
-   MostrarPesoVolumetrico,MostrarCostoEnvio, CalcularCostoEnvio, MostrarTotalPesoVolumetrico, MostrarTipoCliente} from "./totalizador";
+   MostrarPesoVolumetrico,MostrarCostoEnvio, CalcularCostoEnvio, MostrarTotalPesoVolumetrico, MostrarTipoCliente, MostrarDescuentoTipoCliente} from "./totalizador";
 
 const cantidad_item=document.querySelector("#Cantidad_item");
 const precio_item=document.querySelector("#Precio_item");
@@ -20,7 +20,7 @@ const costoEnvio=document.querySelector("#Costo-Envio");
 const TipoCliente = document.querySelector("#Tipocliente-select");
 const div_descuento_categoria=document.querySelector("#resultado-descuento-categoria");
 const div_impuesto_categoria=document.querySelector("#resultado-impuesto-categoria");
-
+const div_descuento_tipocliente=document.querySelector("#resultadoTipocliente-div");
 const div_CostoEnvio=document.querySelector("#resultado-costo-div");
 
 form.addEventListener("submit", (event) => {
@@ -32,10 +32,12 @@ form.addEventListener("submit", (event) => {
   const Categoriadescuento=MostrarCategoriaDescuento(categoriaSeleccionado, precio_Item);
   const CategoriaImpuesto= MostrarCategoriaImpuesto(categoriaSeleccionado,estadoSeleccionado);
   const Costo_Envio=Number.parseInt(costoEnvio.value);
+  const Tipocliente_value=TipoCliente.value;
 
   div.innerHTML = "<p>Precio Neto: " + MostrarPrecioNeto(precio_Item,cantidaditem) + "</p>";
   div_descuento.innerHTML="<p> Descuento con categoria ("+ Categoriadescuento +" %): "+  MostrarTotalDescuentoConCategoria(Categoriadescuento, MostrarPrecioNeto(precio_Item,cantidaditem)) + " </p>";
   div_impuesto.innerHTML="<p> Impuesto con categoria para "+ MostrarEstado(estadoSeleccionado) +" ("+ CategoriaImpuesto + "%): "+ MostrarTotalImpuestoConCategoria(CategoriaImpuesto,MostrarPrecioNeto(precio_Item,cantidaditem)) +" </p>";
   div_precio_total.innerHTML = "<p> Precio total (descuento e impuesto): $" + MostrarTotalPesoVolumetrico(cantidaditem, precio_Item, estadoSeleccionado, categoriaSeleccionado,Costo_Envio) + "</p>";
   div_CostoEnvio.innerHTML= "<p>Costo envio: " + MostrarCostoEnvio(Costo_Envio) + "</p>";
+  div_descuento_tipocliente.innerHTML="<p>Descuento de costo de envio: " + MostrarDescuentoTipoCliente(Tipocliente_value) + "</p>";
 });

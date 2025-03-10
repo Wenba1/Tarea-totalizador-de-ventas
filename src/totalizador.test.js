@@ -2,7 +2,7 @@ import {Ingreso,Ingreso_precio, MostrarPrecioNeto, MostrarEstado, MostrarPocenta
    MostrarTotalPrecioYDescuento, MostrarDescuentos,MostrarTotalprecioCategoria,MostrarCategoriaDescuento,MostrarCategoriaImpuesto,
    MostrarTotalImpuestoConCategoria,
    MostrarTotalDescuentoConCategoria, MostrarPesoVolumetrico,
-   MostrarCostoEnvio, MostrarTotalPesoVolumetrico, CalcularCostoEnvio, MostrarTipoCliente} from "./totalizador.js";
+   MostrarCostoEnvio, MostrarTotalPesoVolumetrico, CalcularCostoEnvio, MostrarTipoCliente,MostrarDescuentoTipoCliente} from "./totalizador.js";
 
 describe("Totalizador de ventas: ", () => {
   it("Deberia Ingresar la cantidad de items", () => {
@@ -219,5 +219,9 @@ describe("Totalizador de ventas: ", () => {
 
   it("Deberia mostrar Tipo de cliente", () => {
     expect(MostrarTipoCliente("Normal")).toEqual("Normal");
+  });
+
+  it("Deberia mostrar El descuento por evio del Tipo de cliente", () => {
+    expect(MostrarDescuentoTipoCliente("Normal")).toEqual(0);
   });
 });

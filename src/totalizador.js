@@ -187,3 +187,9 @@ export function MostrarTipoCliente(Tipocliente){
   return Tipocliente;
 }
 
+export function MostrarDescuentoTipoCliente(Tipocliente){
+  if(Tipocliente==="Normal")
+  {
+    return 0;
+  }
+}
