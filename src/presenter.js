@@ -2,7 +2,7 @@ import {Ingreso,Ingreso_precio,MostrarPrecioNeto,MostrarPocentajeDelEstado, Most
    MostrarTotalporcentaje, MostrarPrecioTotal,MostrarTotalDescuento, MostrarTotalPrecioYDescuento,
    MostrarDescuentos,MostrarTotalDescuento,MostrarTotalprecioCategoria,MostrarCategoriaDescuento,
    MostrarCategoriaImpuesto,MostrarTotalDescuentoConCategoria,MostrarTotalImpuestoConCategoria, 
-   MostrarPesoVolumetrico,MostrarCostoEnvio, CalcularCostoEnvio, MostrarTotalPesoVolumetrico, MostrarTipoCliente, MostrarDescuentoTipoCliente} from "./totalizador";
+   MostrarPesoVolumetrico,MostrarCostoEnvio, CalcularCostoEnvio, MostrarTotalPesoVolumetrico, MostrarTipoCliente, MostrarDescuentoTipoCliente, MostrarTotalPesoVolumetricoDescuento} from "./totalizador";
 
 const cantidad_item=document.querySelector("#Cantidad_item");
 const precio_item=document.querySelector("#Precio_item");
@@ -37,7 +37,7 @@ form.addEventListener("submit", (event) => {
   div.innerHTML = "<p>Precio Neto: " + MostrarPrecioNeto(precio_Item,cantidaditem) + "</p>";
   div_descuento.innerHTML="<p> Descuento con categoria ("+ Categoriadescuento +" %): "+  MostrarTotalDescuentoConCategoria(Categoriadescuento, MostrarPrecioNeto(precio_Item,cantidaditem)) + " </p>";
   div_impuesto.innerHTML="<p> Impuesto con categoria para "+ MostrarEstado(estadoSeleccionado) +" ("+ CategoriaImpuesto + "%): "+ MostrarTotalImpuestoConCategoria(CategoriaImpuesto,MostrarPrecioNeto(precio_Item,cantidaditem)) +" </p>";
-  div_precio_total.innerHTML = "<p> Precio total (descuento e impuesto): $" + MostrarTotalPesoVolumetrico(cantidaditem, precio_Item, estadoSeleccionado, categoriaSeleccionado,Costo_Envio) + "</p>";
+  div_precio_total.innerHTML = "<p> Precio total (descuento e impuesto): $" + MostrarTotalPesoVolumetricoDescuento(cantidaditem, precio_Item, estadoSeleccionado, categoriaSeleccionado,Costo_Envio,Tipocliente_value) + "</p>";
   div_CostoEnvio.innerHTML= "<p>Costo envio: " + MostrarCostoEnvio(Costo_Envio) + "</p>";
   div_descuento_tipocliente.innerHTML="<p>Descuento de costo de envio: " + MostrarDescuentoTipoCliente(Tipocliente_value) + "</p>";
 });

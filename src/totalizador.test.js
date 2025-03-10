@@ -1,7 +1,7 @@
 import {Ingreso,Ingreso_precio, MostrarPrecioNeto, MostrarEstado, MostrarPocentajeDelEstado,MostrarPrecioTotal,MostrarTotalporcentaje,MostrarTotalDescuento,
    MostrarTotalPrecioYDescuento, MostrarDescuentos,MostrarTotalprecioCategoria,MostrarCategoriaDescuento,MostrarCategoriaImpuesto,
    MostrarTotalImpuestoConCategoria,
-   MostrarTotalDescuentoConCategoria, MostrarPesoVolumetrico,
+   MostrarTotalDescuentoConCategoria, MostrarPesoVolumetrico, MostrarTotalPesoVolumetricoDescuento,
    MostrarCostoEnvio, MostrarTotalPesoVolumetrico, CalcularCostoEnvio, MostrarTipoCliente,MostrarDescuentoTipoCliente} from "./totalizador.js";
 
 describe("Totalizador de ventas: ", () => {
@@ -224,4 +224,8 @@ describe("Totalizador de ventas: ", () => {
   it("Deberia mostrar El descuento por evio del Tipo de cliente", () => {
     expect(MostrarDescuentoTipoCliente("Normal")).toEqual(0);
   });
+
+  it("Deberia mostrar el peso Total con el precio volumetrico arriba de 200 con descuento cliente Normal", () => {
+    expect(MostrarTotalPesoVolumetricoDescuento(20,3,"AL","Varios",220,"Normal")).toEqual(561.6);
+  })
 });

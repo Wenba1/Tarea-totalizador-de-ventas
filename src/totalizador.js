@@ -193,3 +193,22 @@ export function MostrarDescuentoTipoCliente(Tipocliente){
     return 0;
   }
 }
+
+export function CalcularDescuentoCostoEnvio(TipoCliente,precio){
+  var descuento=MostrarDescuentoTipoCliente(TipoCliente);
+  var precioNuevo=(precio*descuento)/100;
+  return precio-precioNuevo;
+}
+
+export function MostrarTotalPesoVolumetricoDescuento(Item,precio_Item,estado,categoria,peso_volumetrico,TipoCliente){
+  var precio= MostrarPrecioNeto(Item,precio_Item);
+  var precio_peso=CalcularCostoEnvio(peso_volumetrico,precio);
+  var DescuentoPrecio_peso=CalcularDescuentoCostoEnvio(TipoCliente,precio_peso);
+  var catImpuesto=MostrarCategoriaImpuesto(categoria,estado);
+  var catDescuento=MostrarCategoriaDescuento(categoria,DescuentoPrecio_peso);
+  var sumaPorcentaje=MostrarTotalImpuestoConCategoria(catImpuesto,DescuentoPrecio_peso);
+  var restarDescuento=MostrarTotalDescuentoConCategoria(catDescuento,DescuentoPrecio_peso);
+  var sumaTotal=(DescuentoPrecio_peso+sumaPorcentaje-restarDescuento);
+  var redondeado=Math.round(sumaTotal * 10) / 10;
+  return redondeado;
+}
