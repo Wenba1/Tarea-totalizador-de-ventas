@@ -148,6 +148,8 @@ export function MostrarCostoEnvio(peso_volumetrico){
     CostoNuevo = 3.5;
   } else if (peso_volumetrico >= 21 && peso_volumetrico <= 30) {
     CostoNuevo = 5;
+  } else if (peso_volumetrico >= 31 && peso_volumetrico <= 40) {
+    CostoNuevo = 6;
   }
 
   return CostoNuevo;
