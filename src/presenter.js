@@ -2,7 +2,7 @@ import {Ingreso,Ingreso_precio,MostrarPrecioNeto,MostrarPocentajeDelEstado, Most
    MostrarTotalporcentaje, MostrarPrecioTotal,MostrarTotalDescuento, MostrarTotalPrecioYDescuento,
    MostrarDescuentos,MostrarTotalDescuento,MostrarTotalprecioCategoria,MostrarCategoriaDescuento,
    MostrarCategoriaImpuesto,MostrarTotalDescuentoConCategoria,MostrarTotalImpuestoConCategoria, 
-   MostrarPesoVolumetrico} from "./totalizador";
+   MostrarPesoVolumetrico,MostrarCostoEnvio, CalcularCostoEnvio, MostrarTotalPesoVolumetrico} from "./totalizador";
 
 const cantidad_item=document.querySelector("#Cantidad_item");
 const precio_item=document.querySelector("#Precio_item");
@@ -16,12 +16,12 @@ const div_precio_total=document.querySelector("#resultado-precio-total");
 const div_descuento=document.querySelector("#resultado-descuento");
 const categoria = document.querySelector("#categoria-select");
 const pesovolumetrico=document.querySelector("#Peso-volumetrico");
+const costoEnvio=document.querySelector("#Costo-Envio");
 
 const div_descuento_categoria=document.querySelector("#resultado-descuento-categoria");
 const div_impuesto_categoria=document.querySelector("#resultado-impuesto-categoria");
 
-const div_pesoVolumetrico=document.querySelector("#resultado-peso-div");
-
+const div_CostoEnvio=document.querySelector("#resultado-costo-div");
 
 form.addEventListener("submit", (event) => {
   event.preventDefault();
@@ -31,19 +31,11 @@ form.addEventListener("submit", (event) => {
   const categoriaSeleccionado=categoria.value;
   const Categoriadescuento=MostrarCategoriaDescuento(categoriaSeleccionado, precio_Item);
   const CategoriaImpuesto= MostrarCategoriaImpuesto(categoriaSeleccionado,estadoSeleccionado);
-  const Peso_Volumetrico=Number.parseInt(pesovolumetrico.value);
+  const Costo_Envio=Number.parseInt(costoEnvio.value);
 
   div.innerHTML = "<p>Precio Neto: " + MostrarPrecioNeto(precio_Item,cantidaditem) + "</p>";
   div_descuento.innerHTML="<p> Descuento con categoria ("+ Categoriadescuento +" %): "+  MostrarTotalDescuentoConCategoria(Categoriadescuento, MostrarPrecioNeto(precio_Item,cantidaditem)) + " </p>";
   div_impuesto.innerHTML="<p> Impuesto con categoria para "+ MostrarEstado(estadoSeleccionado) +" ("+ CategoriaImpuesto + "%): "+ MostrarTotalImpuestoConCategoria(CategoriaImpuesto,MostrarPrecioNeto(precio_Item,cantidaditem)) +" </p>";
-  div_precio_total.innerHTML = "<p> Precio total (descuento e impuesto): $" + MostrarTotalprecioCategoria(cantidaditem, precio_Item, estadoSeleccionado, categoriaSeleccionado) + "</p>";
-  div_pesoVolumetrico.innerHTML= "<p>Peso volumetrico: " + MostrarPesoVolumetrico(Peso_Volumetrico) + "</p>";
+  div_precio_total.innerHTML = "<p> Precio total (descuento e impuesto): $" + MostrarTotalPesoVolumetrico(cantidaditem, precio_Item, estadoSeleccionado, categoriaSeleccionado,Costo_Envio) + "</p>";
+  div_CostoEnvio.innerHTML= "<p>Costo envio: " + MostrarCostoEnvio(Costo_Envio) + "</p>";
 });
-
-/*
-<label for="peso_label">Peso Volumetrico:</label>
-    <input type="number"id="Peso-volumetrico"/>
-
-<div id="resultado-peso-div"></div>
-
-*/

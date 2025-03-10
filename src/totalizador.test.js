@@ -1,7 +1,8 @@
 import {Ingreso,Ingreso_precio, MostrarPrecioNeto, MostrarEstado, MostrarPocentajeDelEstado,MostrarPrecioTotal,MostrarTotalporcentaje,MostrarTotalDescuento,
    MostrarTotalPrecioYDescuento, MostrarDescuentos,MostrarTotalprecioCategoria,MostrarCategoriaDescuento,MostrarCategoriaImpuesto,
    MostrarTotalImpuestoConCategoria,
-   MostrarTotalDescuentoConCategoria, MostrarPesoVolumetrico} from "./totalizador.js";
+   MostrarTotalDescuentoConCategoria, MostrarPesoVolumetrico,
+   MostrarCostoEnvio, MostrarTotalPesoVolumetrico, CalcularCostoEnvio} from "./totalizador.js";
 
 describe("Totalizador de ventas: ", () => {
   it("Deberia Ingresar la cantidad de items", () => {
@@ -189,6 +190,7 @@ describe("Totalizador de ventas: ", () => {
   });
 
   it("Deberia mostrar el peso volumetrico:", () => {
-    expect(MostrarPesoVolumetrico(5)).toEqual(5);
+    expect(MostrarTotalPesoVolumetrico(20,3,"AL","Varios",3)).toEqual(62.4);
   });
+  //MostrarCostoEnvio, MostrarTotalPesoVolumetrico, CalcularCostoEnvio
 });

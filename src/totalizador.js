@@ -143,10 +143,32 @@ export function MostrarTotalprecioCategoria(Item,precio_Item,estado,categoria){
   return redondeado;
 }
 
-export function MostrarPesoVolumetrico(peso_volumetrico){
+export function MostrarCostoEnvio(peso_volumetrico){
   if(peso_volumetrico>=0 && peso_volumetrico<10){
-    return peso_volumetrico;
+    return 0;
   }
 }
 
+export function CalcularCostoEnvio(peso_volumetrico,cantidad){
+  var costo=MostrarCostoEnvio(peso_volumetrico);
+  if(costo===0){
+    return cantidad;
+  }
+  else
+  {
+    return cantidad*costo;
+  }
+}
+
+export function MostrarTotalPesoVolumetrico(Item,precio_Item,estado,categoria,peso_volumetrico){
+  var precio= MostrarPrecioNeto(Item,precio_Item);
+  var precio_peso=CalcularCostoEnvio(peso_volumetrico,precio);
+  var catImpuesto=MostrarCategoriaImpuesto(categoria,estado);
+  var catDescuento=MostrarCategoriaDescuento(categoria,precio_peso);
+  var sumaPorcentaje=MostrarTotalImpuestoConCategoria(catImpuesto,precio_peso);
+  var restarDescuento=MostrarTotalDescuentoConCategoria(catDescuento,precio_peso);
+  var sumaTotal=(precio_peso+sumaPorcentaje-restarDescuento);
+  var redondeado=Math.round(sumaTotal * 10) / 10;
+  return redondeado;
+}
 
