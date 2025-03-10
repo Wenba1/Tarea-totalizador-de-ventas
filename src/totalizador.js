@@ -142,10 +142,12 @@ export function MostrarTotalprecioCategoria(Item,precio_Item,estado,categoria){
 
 export function MostrarCostoEnvio(peso_volumetrico){
   var CostoNuevo = 0;
-  if (peso_volumetrico >= 0 && peso_volumetrico < 10) {
+  if (peso_volumetrico >= 0 && peso_volumetrico <= 10) {
     CostoNuevo = 0;
-  } else if (peso_volumetrico >= 10 && peso_volumetrico < 20) {
+  } else if (peso_volumetrico >= 11 && peso_volumetrico <= 20) {
     CostoNuevo = 3.5;
+  } else if (peso_volumetrico >= 21 && peso_volumetrico <= 30) {
+    CostoNuevo = 5;
   }
 
   return CostoNuevo;

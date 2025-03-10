@@ -196,4 +196,8 @@ describe("Totalizador de ventas: ", () => {
   it("Deberia mostrar el peso Total con el precio volumetrico de 11-20", () => {
     expect(MostrarTotalPesoVolumetrico(20,3,"AL","Varios",12)).toEqual(218.4);
   });
+
+  it("Deberia mostrar el peso Total con el precio volumetrico de 11-20", () => {
+    expect(MostrarTotalPesoVolumetrico(20,3,"AL","Varios",22)).toEqual(312);
+  });
 });
