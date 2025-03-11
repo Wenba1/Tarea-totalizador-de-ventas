@@ -218,3 +218,7 @@ export function MostrarTotalPesoVolumetricoDescuento(Item,precio_Item,estado,cat
   var redondeado=Math.round(sumaTotal * 10) / 10;
   return redondeado;
 }
+
+export function MostrarDescuentoMontoFijo(precio_neto){
+  return precio_neto;
+}

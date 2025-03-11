@@ -2,7 +2,8 @@ import {Ingreso,Ingreso_precio,MostrarPrecioNeto,MostrarPocentajeDelEstado, Most
    MostrarTotalporcentaje, MostrarPrecioTotal,MostrarTotalDescuento, MostrarTotalPrecioYDescuento,
    MostrarDescuentos,MostrarTotalDescuento,MostrarTotalprecioCategoria,MostrarCategoriaDescuento,
    MostrarCategoriaImpuesto,MostrarTotalDescuentoConCategoria,MostrarTotalImpuestoConCategoria, 
-   MostrarPesoVolumetrico,MostrarCostoEnvio, CalcularCostoEnvio, MostrarTotalPesoVolumetrico, MostrarTipoCliente, MostrarDescuentoTipoCliente, MostrarTotalPesoVolumetricoDescuento} from "./totalizador";
+   MostrarPesoVolumetrico,MostrarCostoEnvio, CalcularCostoEnvio, MostrarTotalPesoVolumetrico, 
+   MostrarTipoCliente, MostrarDescuentoTipoCliente, MostrarTotalPesoVolumetricoDescuento, MostrarDescuentoMontoFijo} from "./totalizador";
 
 const cantidad_item=document.querySelector("#Cantidad_item");
 const precio_item=document.querySelector("#Precio_item");
@@ -22,6 +23,7 @@ const div_descuento_categoria=document.querySelector("#resultado-descuento-categ
 const div_impuesto_categoria=document.querySelector("#resultado-impuesto-categoria");
 const div_descuento_tipocliente=document.querySelector("#resultadoTipocliente-div");
 const div_CostoEnvio=document.querySelector("#resultado-costo-div");
+const div_DescuentoMontoFijo=document.querySelector("#resultado-descuentofijo-total");
 
 form.addEventListener("submit", (event) => {
   event.preventDefault();
@@ -40,4 +42,5 @@ form.addEventListener("submit", (event) => {
   div_precio_total.innerHTML = "<p> Precio total (descuento e impuesto): $" + MostrarTotalPesoVolumetricoDescuento(cantidaditem, precio_Item, estadoSeleccionado, categoriaSeleccionado,Costo_Envio,Tipocliente_value) + "</p>";
   div_CostoEnvio.innerHTML= "<p>Costo envio: " + MostrarCostoEnvio(Costo_Envio) + "</p>";
   div_descuento_tipocliente.innerHTML="<p>Descuento de costo de envio: " + MostrarDescuentoTipoCliente(Tipocliente_value) + "</p>";
+  div_DescuentoMontoFijo.innerHTML="<p>Descuento de fijo: " + MostrarDescuentoMontoFijo(8) + "</p>";
 });
