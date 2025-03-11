@@ -221,10 +221,12 @@ export function MostrarTotalPesoVolumetricoDescuento(Item,precio_Item,estado,cat
 
 export function MostrarDescuentoMontoFijo(precio_neto,TipoCliente,categoria){
   var DescuentoFijo=0;
-  if(precio_neto>3000 && TipoCliente==="Recurrente" && categoria==="Alimentos")
-  {
+  if(precio_neto>3000 && TipoCliente==="Recurrente" && categoria==="Alimentos"){
     DescuentoFijo=100;
+  }else if(precio_neto>7000 && TipoCliente==="Especial" && categoria==="Electronicos"){
+    DescuentoFijo=200;
   }
+
   return DescuentoFijo;
 }
 

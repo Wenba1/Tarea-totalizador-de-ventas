@@ -249,4 +249,12 @@ describe("Totalizador de ventas: ", () => {
   it("Deberia el total incluir el descuento fijo ", () => {
     expect(MostrarTotalDesucuentoFijo(2000,3,"AL","Alimentos",8,"Recurrente")).toEqual(5694.4);
   });
+
+  it("Deberia el total incluir el descuento fijo de descuento de 200", () => {
+    expect(MostrarTotalDesucuentoFijo(3000,3,"AL","Electronicos",8,"Especial")).toEqual(8668);
+  });
+
+  it("Deberia mostrar el Descuento con las condiciones ", () => {
+    expect(MostrarDescuentoMontoFijo(9000,"Especial","Electronicos")).toEqual(200);
+  });
 });
