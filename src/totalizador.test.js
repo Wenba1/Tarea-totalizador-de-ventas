@@ -3,7 +3,7 @@ import {Ingreso,Ingreso_precio, MostrarPrecioNeto, MostrarEstado, MostrarPocenta
    MostrarTotalImpuestoConCategoria,
    MostrarTotalDescuentoConCategoria, MostrarPesoVolumetrico, MostrarTotalPesoVolumetricoDescuento,
    MostrarCostoEnvio, MostrarTotalPesoVolumetrico, CalcularCostoEnvio, MostrarTipoCliente,MostrarDescuentoTipoCliente,
-   MostrarDescuentoMontoFijo} from "./totalizador.js";
+   MostrarDescuentoMontoFijo,MostrarTotalDesucuentoFijo} from "./totalizador.js";
 
 describe("Totalizador de ventas: ", () => {
   it("Deberia Ingresar la cantidad de items", () => {
@@ -244,5 +244,9 @@ describe("Totalizador de ventas: ", () => {
 
   it("Deberia mostrar el Descuento con las condiciones ", () => {
     expect(MostrarDescuentoMontoFijo(3500,"Recurrente","Alimentos")).toEqual(100);
+  });
+
+  it("Deberia el total incluir el descuento fijo ", () => {
+    expect(MostrarTotalDesucuentoFijo(2000,3,"AL","Alimentos",8,"Recurrente")).toEqual(5694.4);
   });
 });
