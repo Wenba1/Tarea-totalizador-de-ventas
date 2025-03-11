@@ -42,5 +42,5 @@ form.addEventListener("submit", (event) => {
   div_precio_total.innerHTML = "<p> Precio total (descuento e impuesto): $" + MostrarTotalPesoVolumetricoDescuento(cantidaditem, precio_Item, estadoSeleccionado, categoriaSeleccionado,Costo_Envio,Tipocliente_value) + "</p>";
   div_CostoEnvio.innerHTML= "<p>Costo envio: " + MostrarCostoEnvio(Costo_Envio) + "</p>";
   div_descuento_tipocliente.innerHTML="<p>Descuento de costo de envio: " + MostrarDescuentoTipoCliente(Tipocliente_value) + "</p>";
-  div_DescuentoMontoFijo.innerHTML="<p>Descuento de fijo: " + MostrarDescuentoMontoFijo(8) + "</p>";
+  div_DescuentoMontoFijo.innerHTML="<p>Descuento de fijo: " + MostrarDescuentoMontoFijo(MostrarPrecioNeto(precio_Item,cantidaditem),Tipocliente_value,categoriaSeleccionado) + "</p>";
 });

@@ -219,6 +219,11 @@ export function MostrarTotalPesoVolumetricoDescuento(Item,precio_Item,estado,cat
   return redondeado;
 }
 
-export function MostrarDescuentoMontoFijo(precio_neto){
-  return precio_neto;
+export function MostrarDescuentoMontoFijo(precio_neto,TipoCliente,categoria){
+  var DescuentoFijo=0;
+  if(precio_neto>3000 && TipoCliente==="Recurrente" && categoria==="Alimentos")
+  {
+    DescuentoFijo=100;
+  }
+  return DescuentoFijo;
 }

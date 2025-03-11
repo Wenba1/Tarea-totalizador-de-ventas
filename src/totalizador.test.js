@@ -228,21 +228,21 @@ describe("Totalizador de ventas: ", () => {
 
   it("Deberia mostrar el peso Total con el precio volumetrico arriba de 200 con descuento cliente Normal", () => {
     expect(MostrarTotalPesoVolumetricoDescuento(20,3,"AL","Varios",220,"Normal")).toEqual(561.6);
-  })
+  });
 
   it("Deberia mostrar el peso Total con el precio volumetrico arriba de 200 con descuento cliente Recurrente", () => {
     expect(MostrarTotalPesoVolumetricoDescuento(20,3,"AL","Varios",8,"Recurrente")).toEqual(62.1);
-  })
+  });
 
   it("Deberia mostrar el peso Total con el precio volumetrico arriba de 200 con descuento cliente Antiguo Recurrente", () => {
     expect(MostrarTotalPesoVolumetricoDescuento(20,3,"AL","Varios",10,"Antiguo Recurrente")).toEqual(61.8);
-  })
+  });
 
   it("Deberia mostrar el peso Total con el precio volumetrico arriba de 200 con descuento cliente Especial", () => {
     expect(MostrarTotalPesoVolumetricoDescuento(20,3,"AL","Varios",100,"Especial")).toEqual(399.5);
-  })
+  });
 
-  it("Deberia mostrar el precio neto ", () => {
-    expect(MostrarDescuentoMontoFijo(8)).toEqual(8);
-  })
+  it("Deberia mostrar el Descuento con las condiciones ", () => {
+    expect(MostrarDescuentoMontoFijo(3500,"Recurrente","Alimentos")).toEqual(100);
+  });
 });
